@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 产品展示台 - 跑鞋</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>3D 产品展示台</h1>
+            <p class="subtitle">拖拽旋转 · 滚轮缩放 · 多角度观察</p>
+        </header>
+
+        <main class="main-content">
+            <div class="viewer-section">
+                <div class="canvas-container" id="canvasContainer">
+                    <canvas id="productCanvas"></canvas>
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>加载中...</p>
+                    </div>
+                </div>
+                <div class="viewer-controls">
+                    <button class="control-btn" id="resetView" title="重置视角">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                            <path d="M3 3v5h5"/>
+                        </svg>
+                    </button>
+                    <button class="control-btn" id="autoRotate" title="自动旋转">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/>
+                            <path d="M21 3v5h-5"/>
+                        </svg>
+                    </button>
+                    <button class="control-btn" id="zoomIn" title="放大">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                            <path d="M11 8v6M8 11h6"/>
+                        </svg>
+                    </button>
+                    <button class="control-btn" id="zoomOut" title="缩小">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                            <path d="M8 11h6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <aside class="info-panel">
+                <div class="product-info">
+                    <span class="product-tag">新品</span>
+                    <h2 class="product-name" id="productName">AirFlow Pro 跑鞋</h2>
+                    <div class="product-price">
+                        <span class="price-current" id="priceCurrent">¥899</span>
+                        <span class="price-original" id="priceOriginal">¥1299</span>
+                        <span class="price-discount">-31%</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">选择颜色</h3>
+                    <div class="color-options" id="colorOptions">
+                        <button class="color-btn active" data-color="black" style="--color: #1a1a1a;" title="经典黑"></button>
+                        <button class="color-btn" data-color="blue" style="--color: #4a6fa5;" title="灰蓝色"></button>
+                        <button class="color-btn" data-color="white" style="--color: #f5f5f5;" title="珍珠白"></button>
+                        <button class="color-btn" data-color="red" style="--color: #c94c4c;" title="烈焰红"></button>
+                        <button class="color-btn" data-color="green" style="--color: #6b8e23;" title="橄榄绿"></button>
+                    </div>
+                    <p class="color-name" id="colorName">经典黑</p>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">选择尺码</h3>
+                    <div class="size-options" id="sizeOptions">
+                        <button class="size-btn" data-size="39">39</button>
+                        <button class="size-btn" data-size="40">40</button>
+                        <button class="size-btn active" data-size="41">41</button>
+                        <button class="size-btn" data-size="42">42</button>
+                        <button class="size-btn" data-size="43">43</button>
+                        <button class="size-btn" data-size="44">44</button>
+                        <button class="size-btn" data-size="45">45</button>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">产品特点</h3>
+                    <ul class="features-list">
+                        <li>
+                            <span class="feature-icon">👟</span>
+                            <div>
+                                <strong>透气网面</strong>
+                                <p>轻量化设计，全天候舒适</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🛡️</span>
+                            <div>
+                                <strong>缓震中底</strong>
+                                <p>回弹科技，保护关节</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🏃</span>
+                            <div>
+                                <strong>耐磨大底</strong>
+                                <p>防滑纹路，抓地力强</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-secondary">加入购物车</button>
+                    <button class="btn btn-primary">立即购买</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
